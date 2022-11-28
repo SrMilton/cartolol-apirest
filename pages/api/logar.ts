@@ -44,7 +44,7 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse)
                 { id: checkuser[0].id,
                 username: checkuser[0].username,
                 email: checkuser[0].email},
-                process.env.JWT_KEY
+                process.env.JWT_KEY as string
               );
 
                 return res.status(200).json(
