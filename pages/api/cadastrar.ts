@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import {executeQuery} from '../../config/db'
 import NextCors from 'nextjs-cors';
+import bcrypt from 'bcryptjs'
 
 export default async function handler(req: NextApiRequest,res: NextApiResponse)
 {
@@ -41,19 +42,23 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse)
 
     try
     {
-    query = "INSERT INTO users (username, email, pass) VALUES ('" + username + "','" + email + "','" + senha + "');"
-    var lista = await executeQuery(query, [])
+        bcrypt.hash(senha, 10).then(async (hash) => {
+        query = "INSERT INTO users (username, email, pass) VALUES ('" + username + "','" + email + "','" + hash + "');"
+        var lista = await executeQuery(query, [])
+        })
 
-    return res.status(200).json(
-    { status: 'true',
-    msng: 'Cadastrado com sucesso!'}
-    )
-    }
-    catch
-    {
-        return res.status(500).json(
-            { status: 'false',
-            msng: 'Ocorreu um erro interno, tente novamente'}
-            )
-    }
+        
+        
+        return res.status(200).json(
+        { status: 'true',
+        msng: 'Cadastrado com sucesso!'}
+        )
+        }
+        catch
+        {
+            return res.status(500).json(
+                { status: 'false',
+                msng: 'Ocorreu um erro interno, tente novamente'}
+                )
+        }
 }

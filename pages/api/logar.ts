@@ -1,6 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import {executeQuery} from '../../config/db'
-import NextCors from 'nextjs-cors';
+import NextCors from 'nextjs-cors'
+import {sign} from 'jsonwebtoken'
+import bcrypt from 'bcryptjs'
 
 export default async function handler(req: NextApiRequest,res: NextApiResponse)
 {
@@ -27,9 +29,9 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse)
 
     try
     {
-        if(checkuser[0].id != undefined)
-        {
-            if(checkuser[0].pass != senha)
+
+        bcrypt.compare(senha, checkuser[0].pass).then((match) => {
+            if(!match)
             {
                 return res.status(200).json(
                     { status: 'false',
@@ -38,12 +40,20 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse)
             }
             else //Logado!
             {
+                const accessToken = sign( //Criar JsonWebToken
+                { id: checkuser[0].id,
+                username: checkuser[0].username,
+                email: checkuser[0].email},
+                process.env.JWT_KEY
+              );
+
                 return res.status(200).json(
                     { status: 'true',
-                    jwt: 'jwt.session.token'}
+                    jwt: accessToken}
                     )
             }
-        }
+        })
+
     }
     catch{ //Usuario nao cadastrado
         return res.status(200).json(
