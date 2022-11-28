@@ -10,7 +10,7 @@ export default function Home() {
         
         <div className={styles.cabecalho} >
         <h3>
-          Atenção: Todos os requests devem ser enviados para a URL http://localhost:3000/api. <br></br>
+          Atenção: Todos os requests devem ser enviados para a URL https://cartolol-apirest.vercel.app/api. <br></br>
           Atenção: Os bodys de todos os requests devem estar no formato JSON!
           </h3>
           </div>
@@ -21,7 +21,7 @@ export default function Home() {
         </h2>
         
           
-        URL: <code className={styles.code}>http://localhost:3000/api/ping</code>
+        URL: <code className={styles.code}>https://cartolol-apirest.vercel.app/api/ping</code>
           <br></br>
 
         <h4 >
@@ -39,7 +39,7 @@ export default function Home() {
         </h2>
         
           
-        URL: <code className={styles.code}>http://localhost:3000/api/cadastrar</code>
+        URL: <code className={styles.code}>https://cartolol-apirest.vercel.app/api/cadastrar</code>
           <br></br>
         
           <h5 >
@@ -80,7 +80,7 @@ export default function Home() {
         </h2>
         
           
-        URL: <code className={styles.code}>http://localhost:3000/api/logar</code>
+        URL: <code className={styles.code}>https://cartolol-apirest.vercel.app/api/logar</code>
           <br></br>
         
           <h5 >
