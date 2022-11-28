@@ -108,6 +108,37 @@ export default function Home() {
         1 - status: false | msng: Ocorreu um erro interno, tente novamente <br></br>
         </div>
 
+        <div className={styles.description}>
+        <h2 >
+          Pegar Lista Players
+        </h2>
+        
+          
+        URL: <code className={styles.code}>https://cartolol-apirest.vercel.app/api/get_players_list</code>
+          <br></br>
+        
+          <h5 >
+          Parâmetros exigidos:
+        </h5>
+        lane:<code className={styles.code}>int (1:top|2:jg|3:mid|4:adc|5:sup)</code> 
+        <h4 >
+          Possiveis retornos:
+        </h4>
+        <h5 >
+          Status Code 200:
+        </h5>
+        1 - status: true | players: [array] <br></br>
+        <h5 >
+          Status Code 400:
+        </h5>
+        1 - status: false | msng: Parametros invalidos ou faltando <br></br>
+
+        <h5 >
+          Status Code 500:
+        </h5>
+        1 - status: false | msng: Ocorreu um erro interno, tente novamente <br></br>
+        </div>
+
         
       </main>
     </div>
