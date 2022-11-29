@@ -139,6 +139,73 @@ export default function Home() {
         1 - status: false | msng: Ocorreu um erro interno, tente novamente <br></br>
         </div>
 
+
+        <div className={styles.description}>
+        <h2 >
+          Check Session JWT
+        </h2>
+        
+          
+        URL: <code className={styles.code}>https://cartolol-apirest.vercel.app/api/check_session</code>
+          <br></br>
+        
+          <h5 >
+          Parâmetros exigidos:
+        </h5>
+        jwt:<code className={styles.code}>string</code> 
+        <h4 >
+          Possiveis retornos:
+        </h4>
+        <h5 >
+          Status Code 200:
+        </h5>
+        1 - status: true <br></br>
+        2 - status: false <br></br>
+        <h5 >
+          Status Code 400:
+        </h5>
+        1 - status: false | msng: Parametros invalidos ou faltando <br></br>
+        2 - status: false | msng: JWT fornecido não é um JWT valido. <br></br>
+
+        <h5 >
+          Status Code 500:
+        </h5>
+        1 - status: false | msng: Ocorreu um erro interno, tente novamente <br></br>
+        </div>
+
+        <div className={styles.description}>
+        <h2 >
+          Get User Info
+        </h2>
+        
+          
+        URL: <code className={styles.code}>https://cartolol-apirest.vercel.app/api/get_user_info</code>
+          <br></br>
+        
+          <h5 >
+          Parâmetros exigidos:
+        </h5>
+        jwt:<code className={styles.code}>string</code> 
+        <h4 >
+          Possiveis retornos:
+        </h4>
+        <h5 >
+          Status Code 200:
+        </h5>
+        1 - status: true | id: int | username: string | email: string <br></br>
+        2 - status: false | msng: JWT invalido ou expirado<br></br>
+        <h5 >
+          Status Code 400:
+        </h5>
+        1 - status: false | msng: Parametros invalidos ou faltando <br></br>
+        2 - status: false | msng: JWT fornecido não é um JWT valido. <br></br>
+
+        <h5 >
+          Status Code 500:
+        </h5>
+        1 - status: false | msng: Ocorreu um erro interno, tente novamente <br></br>
+        </div>
+
         
       </main>
     </div>
