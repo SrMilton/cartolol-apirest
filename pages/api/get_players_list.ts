@@ -27,7 +27,7 @@ var players = [
     pos: "jg",
     time: "T1",
     media_farm: "179",
-    img_url: "https://i.imgur.com/fdF2ykl.png,
+    img_url: "https://i.imgur.com/fdF2ykl.png",
     partida_atual: {
       kda: "2/5/9",
       atual_farm: "186",
