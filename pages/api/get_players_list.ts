@@ -8,7 +8,7 @@ var players = [
     pos: "top",
     time: "T1",
     media_farm: "289",
-    img_url: "https://i.imgur.com/HaTacq6.png",
+    img_url: "https://i.imgur.com/7PehcU8.png",
     partida_atual: {
       kda: "2/5/6",
       atual_farm: "288",
@@ -27,7 +27,7 @@ var players = [
     pos: "jg",
     time: "T1",
     media_farm: "179",
-    img_url: "https://i.imgur.com/VgE65YU.png",
+    img_url: "https://i.imgur.com/fdF2ykl.png,
     partida_atual: {
       kda: "2/5/9",
       atual_farm: "186",
@@ -46,7 +46,7 @@ var players = [
     pos: "mid",
     time: "T1",
     media_farm: "278",
-    img_url: "https://i.imgur.com/0ZCJ72w.png",
+    img_url: "https://i.imgur.com/7Ca1BsN.png",
     partida_atual: {
       kda: "2/5/6",
       atual_farm: "263",
@@ -65,7 +65,7 @@ var players = [
     pos: "adc",
     time: "T1",
     media_farm: "383",
-    img_url: "https://i.imgur.com/8CdaoIV.png",
+    img_url: "https://i.imgur.com/vWZ7fzR.png",
     partida_atual: {
       kda: "5/4/7",
       atual_farm: "410",
@@ -84,7 +84,7 @@ var players = [
     pos: "sup",
     time: "T1",
     media_farm: "22",
-    img_url: "https://i.imgur.com/BPYCZ73.png",
+    img_url: "https://i.imgur.com/Sq1fn6n.png",
     partida_atual: {
       kda: "3/1/11",
       atual_farm: "24",
@@ -105,7 +105,7 @@ var players = [
     pos: "top",
     time: "Cloud9",
     media_farm: "223",
-    img_url: "https://i.imgur.com/9QNe4IC.png",
+    img_url: "https://i.imgur.com/C44CcIP.png",
     partida_atual: {
       kda: "2/0/11",
       atual_farm: "226",
@@ -124,7 +124,7 @@ var players = [
     pos: "jg",
     time: "Cloud9",
     media_farm: "137",
-    img_url: "https://i.imgur.com/6yiqCln.png",
+    img_url: "https://i.imgur.com/4qQchet.png",
     partida_atual: {
       kda: "2/1/11",
       atual_farm: "153",
@@ -143,7 +143,7 @@ var players = [
     pos: "mid",
     time: "Cloud9",
     media_farm: "224",
-    img_url: "https://i.imgur.com/I5VUbz9.png",
+    img_url: "https://i.imgur.com/6BeFMy5.png",
     partida_atual: {
       kda: "8/2/7",
       atual_farm: "257",
@@ -162,7 +162,7 @@ var players = [
     pos: "adc",
     time: "Cloud9",
     media_farm: "243",
-    img_url: "https://i.imgur.com/dMyTdOb.png",
+    img_url: "https://i.imgur.com/bpp9Rsn.png",
     partida_atual: {
       kda: "5/1/8",
       atual_farm: "259",
@@ -181,7 +181,7 @@ var players = [
     pos: "sup",
     time: "Cloud9",
     media_farm: "18",
-    img_url: "https://i.imgur.com/BBdl560.png",
+    img_url: "https://i.imgur.com/8c3ZgIM.png",
     partida_atual: {
       kda: "1/1/10",
       atual_farm: "14",
@@ -202,7 +202,7 @@ var players = [
     pos: "top",
     time: "paiN Gaming",
     media_farm: "228",
-    img_url: "https://i.imgur.com/ueTVrw6.png",
+    img_url: "https://i.imgur.com/2tHTvT4.png",
     partida_atual: {
       kda: "3/5/1",
       atual_farm: "220",
@@ -221,7 +221,7 @@ var players = [
     pos: "jg",
     time: "paiN Gaming",
     media_farm: "148",
-    img_url: "https://i.imgur.com/50KcCBf.png",
+    img_url: "https://i.imgur.com/ODp6C1U.png",
     partida_atual: {
       kda: "3/4/5",
       atual_farm: "147",
@@ -240,7 +240,7 @@ var players = [
     pos: "mid",
     time: "paiN Gaming",
     media_farm: "304",
-    img_url: "https://i.imgur.com/Tw13WPF.png",
+    img_url: "https://i.imgur.com/JHUJ4xw.png",
     partida_atual: {
       kda: "4/3/5",
       atual_farm: "275",
@@ -259,7 +259,7 @@ var players = [
     pos: "adc",
     time: "paiN Gaming",
     media_farm: "265",
-    img_url: "https://i.imgur.com/NUUBjJa.png",
+    img_url: "https://i.imgur.com/PdNcT5V.png",
     partida_atual: {
       kda: "1/1/9",
       atual_farm: "197",
@@ -278,7 +278,7 @@ var players = [
     pos: "sup",
     time: "paiN Gaming",
     media_farm: "34",
-    img_url: "https://i.imgur.com/5OJstZw.png",
+    img_url: "https://i.imgur.com/deB7FPa.png",
     partida_atual: {
       kda: "1/5/8",
       atual_farm: "28",
@@ -299,7 +299,7 @@ var players = [
     pos: "RED Canids",
     time: "top",
     media_farm: "232",
-    img_url: "https://i.imgur.com/QKq7nu3.png",
+    img_url: "https://i.imgur.com/mEH01PC.png",
     partida_atual: {
       kda: "1/4/2",
       atual_farm: "229",
@@ -318,7 +318,7 @@ var players = [
     pos: "RED Canids",
     time: "jg",
     media_farm: "197",
-    img_url: "https://i.imgur.com/KEMrpbB.png",
+    img_url: "https://i.imgur.com/wPqTnSU.png",
     partida_atual: {
       kda: "0/1/2",
       atual_farm: "211",
@@ -337,7 +337,7 @@ var players = [
     pos: "RED Canids",
     time: "mid",
     media_farm: "215",
-    img_url: "https://i.imgur.com/Vye5gp1.png",
+    img_url: "https://i.imgur.com/8u2QPqW.png",
     partida_atual: {
       kda: "1/5/3",
       atual_farm: "209",
@@ -356,7 +356,7 @@ var players = [
     pos: "RED Canids",
     time: "adc",
     media_farm: "261",
-    img_url: "https://i.imgur.com/LTQjysZ.png",
+    img_url: "https://i.imgur.com/AQM2cXg.png",
     partida_atual: {
       kda: "2/3/0",
       atual_farm: "253",
@@ -375,7 +375,7 @@ var players = [
     pos: "RED Canids",
     time: "sup",
     media_farm: "29",
-    img_url: "https://i.imgur.com/1fS5ifq.png",
+    img_url: "https://i.imgur.com/MoWrF5p.png",
     partida_atual: {
       kda: "0/4/3",
       atual_farm: "38",
@@ -396,7 +396,7 @@ var players = [
     pos: "top",
     time: "KaBuM! e-Sports",
     media_farm: "217",
-    img_url: "https://i.imgur.com/r32DvIE.png",
+    img_url: "https://i.imgur.com/0gVDMzo.png",
     partida_atual: {
       kda: "5/4/12",
       atual_farm: "186",
@@ -415,7 +415,7 @@ var players = [
     pos: "jg",
     time: "KaBuM! e-Sports",
     media_farm: "194",
-    img_url: "https://i.imgur.com/gHmgJtE.png",
+    img_url: "https://i.imgur.com/Ja6R6CT.png",
     partida_atual: {
       kda: "13/1/12",
       atual_farm: "198",
@@ -434,7 +434,7 @@ var players = [
     pos: "mid",
     time: "KaBuM! e-Sports",
     media_farm: "291",
-    img_url: "https://i.imgur.com/zzYh63Q.png",
+    img_url: "https://i.imgur.com/GayKkKR.png",
     partida_atual: {
       kda: "8/4/13",
       atual_farm: "271",
@@ -453,7 +453,7 @@ var players = [
     pos: "adc",
     time: "KaBuM! e-Sports",
     media_farm: "249",
-    img_url: "https://i.imgur.com/JQAAUp9.png",
+    img_url: "https://i.imgur.com/ZV2YPfL.png",
     partida_atual: {
       kda: "5/3/17",
       atual_farm: "218",
@@ -472,7 +472,7 @@ var players = [
     pos: "sup",
     time: "KaBuM! e-Sports",
     media_farm: "15",
-    img_url: "https://i.imgur.com/Z8JKsOm.png",
+    img_url: "https://i.imgur.com/7HH9VEC.png",
     partida_atual: {
       kda: "3/0/25",
       atual_farm: "7",
