@@ -39,7 +39,8 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse)
   if(validToken)
   {
     //Pegar infos do user
-    var jwtdecode = jwt_decode(jwt);
+    var jwtdecode: any
+    jwtdecode = jwt_decode(jwt);
     
 
     var query = "SELECT * FROM users WHERE username = '" + jwtdecode.username + "'"
