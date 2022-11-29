@@ -3,6 +3,7 @@ import NextCors from 'nextjs-cors';
 import {verify} from 'jsonwebtoken'
 import {executeQuery} from '../../config/db'
 import jwt_decode from "jwt-decode";
+import dynamic from 'next/dynamic';
 
 export default async function handler(req: NextApiRequest,res: NextApiResponse)
 {
