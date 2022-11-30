@@ -51,7 +51,14 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse)
         { status: 'true',
           id: checkuser[0].id,
           username: checkuser[0].username,
-          email: checkuser[0].email}
+          email: checkuser[0].email,
+          profile_pic: checkuser[0].profile_pic,
+          ptos: checkuser[0].ptos,
+          id_jogtop: checkuser[0].id_jogtop,
+          id_jogjungle: checkuser[0].id_jogjungle,
+          id_jogmid: checkuser[0].id_jogmid,
+          id_jogbot: checkuser[0].id_jogbot,
+          id_jogsup: checkuser[0].id_jogsup}
         )
   }
   else

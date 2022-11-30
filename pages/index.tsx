@@ -192,7 +192,7 @@ export default function Home() {
         <h5 >
           Status Code 200:
         </h5>
-        1 - status: true | id: int | username: string | email: string <br></br>
+        1 - status: true | id: int | username: string | email: string | profile_pic: int | ptos: int | id_jogtop: int | id_jogjungle: int | id_jogmid: int | id_jogbot: int | id_jogsup: int <br></br>
         2 - status: false | msng: JWT invalido ou expirado<br></br>
         <h5 >
           Status Code 400:
