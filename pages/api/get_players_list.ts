@@ -12,12 +12,12 @@ var players = [
     partida_atual: {
       kda: "2/5/6",
       atual_farm: "288",
-      pontos: ""
+      pontos: "57"
     },
     partida_anterior: {
       kda: "6/3/6",
       anterior_farm: "290",
-      pontos: ""
+      pontos: "76"
     }
   },
   
@@ -31,12 +31,12 @@ var players = [
     partida_atual: {
       kda: "2/5/9",
       atual_farm: "186",
-      pontos: ""
+      pontos: "13"
     },
     partida_anterior: {
       kda: "2/2/7",
       anterior_farm: "171",
-      pontos: ""
+      pontos: "54"
     }
   },
   
@@ -50,12 +50,12 @@ var players = [
     partida_atual: {
       kda: "2/5/6",
       atual_farm: "263",
-      pontos: ""
+      pontos: "64"
     },
     partida_anterior: {
       kda: "0/3/6",
       anterior_farm: "293",
-      pontos: ""
+      pontos: "68"
     }
   },
   
@@ -69,12 +69,12 @@ var players = [
     partida_atual: {
       kda: "5/4/7",
       atual_farm: "410",
-      pontos: ""
+      pontos: "78"
     },
     partida_anterior: {
       kda: "7/3/4",
       anterior_farm: "356",
-      pontos: ""
+      pontos: "99"
     }
   },
   
@@ -88,12 +88,12 @@ var players = [
     partida_atual: {
       kda: "3/1/11",
       atual_farm: "24",
-      pontos: ""
+      pontos: "57"
     },
     partida_anterior: {
       kda: "2/1/9",
       anterior_farm: "20",
-      pontos: ""
+      pontos: "45"
     }
   },
   
@@ -109,12 +109,12 @@ var players = [
     partida_atual: {
       kda: "2/0/11",
       atual_farm: "226",
-      pontos: ""
+      pontos: "12"
     },
     partida_anterior: {
       kda: "0/2/0",
       anterior_farm: "219",
-      pontos: ""
+      pontos: "35"
     }
   },
   
@@ -128,12 +128,12 @@ var players = [
     partida_atual: {
       kda: "2/1/11",
       atual_farm: "153",
-      pontos: ""
+      pontos: "45"
     },
     partida_anterior: {
       kda: "0/4/1",
       anterior_farm: "121",
-      pontos: ""
+      pontos: "15"
     }
   },
   
@@ -147,12 +147,12 @@ var players = [
     partida_atual: {
       kda: "8/2/7",
       atual_farm: "257",
-      pontos: ""
+      pontos: "86"
     },
     partida_anterior: {
       kda: "0/3/1",
       anterior_farm: "190",
-      pontos: ""
+      pontos: "56"
     }
   },
   
@@ -166,12 +166,12 @@ var players = [
     partida_atual: {
       kda: "5/1/8",
       atual_farm: "259",
-      pontos: ""
+      pontos: "87"
     },
     partida_anterior: {
       kda: "0/3/1",
       anterior_farm: "226",
-      pontos: ""
+      pontos: "45"
     }
   },
   
@@ -185,12 +185,12 @@ var players = [
     partida_atual: {
       kda: "1/1/10",
       atual_farm: "14",
-      pontos: ""
+      pontos: "61"
     },
     partida_anterior: {
       kda: "1/7/0",
       anterior_farm: "22",
-      pontos: ""
+      pontos: "64"
     }
   },
   
@@ -206,12 +206,12 @@ var players = [
     partida_atual: {
       kda: "3/5/1",
       atual_farm: "220",
-      pontos: ""
+      pontos: "37"
     },
     partida_anterior: {
       kda: "1/3/4",
       anterior_farm: "236",
-      pontos: ""
+      pontos: "98"
     }
   },
   
@@ -225,12 +225,12 @@ var players = [
     partida_atual: {
       kda: "3/4/5",
       atual_farm: "147",
-      pontos: ""
+      pontos: "45"
     },
     partida_anterior: {
       kda: "2/6/6",
       anterior_farm: "148",
-      pontos: ""
+      pontos: "64"
     }
   },
   
@@ -244,12 +244,12 @@ var players = [
     partida_atual: {
       kda: "4/3/5",
       atual_farm: "275",
-      pontos: ""
+      pontos: "85"
     },
     partida_anterior: {
       kda: "3/3/2",
       anterior_farm: "332",
-      pontos: ""
+      pontos: "24"
     }
   },
   
@@ -263,12 +263,12 @@ var players = [
     partida_atual: {
       kda: "1/1/9",
       atual_farm: "197",
-      pontos: ""
+      pontos: "58"
     },
     partida_anterior: {
       kda: "5/3/3",
       anterior_farm: "332",
-      pontos: ""
+      pontos: "57"
     }
   },
   
@@ -282,12 +282,12 @@ var players = [
     partida_atual: {
       kda: "1/5/8",
       atual_farm: "28",
-      pontos: ""
+      pontos: "46"
     },
     partida_anterior: {
       kda: "0/4/7",
       anterior_farm: "39",
-      pontos: ""
+      pontos: "98"
     }
   },
   
@@ -303,12 +303,12 @@ var players = [
     partida_atual: {
       kda: "1/4/2",
       atual_farm: "229",
-      pontos: ""
+      pontos: "58"
     },
     partida_anterior: {
       kda: "4/5/4",
       anterior_farm: "235",
-      pontos: ""
+      pontos: "91"
     }
   },
   
@@ -322,12 +322,12 @@ var players = [
     partida_atual: {
       kda: "0/1/2",
       atual_farm: "211",
-      pontos: ""
+      pontos: "95"
     },
     partida_anterior: {
       kda: "7/0/5",
       anterior_farm: "183",
-      pontos: ""
+      pontos: "76"
     }
   },
   
@@ -341,12 +341,12 @@ var players = [
     partida_atual: {
       kda: "1/5/3",
       atual_farm: "209",
-      pontos: ""
+      pontos: "64"
     },
     partida_anterior: {
       kda: "5/1/10",
       anterior_farm: "219",
-      pontos: ""
+      pontos: "19"
     }
   },
   
@@ -360,12 +360,12 @@ var players = [
     partida_atual: {
       kda: "2/3/0",
       atual_farm: "253",
-      pontos: ""
+      pontos: "68"
     },
     partida_anterior: {
       kda: "3/2/9",
       anterior_farm: "269",
-      pontos: ""
+      pontos: "44"
     }
   },
   
@@ -379,12 +379,12 @@ var players = [
     partida_atual: {
       kda: "0/4/3",
       atual_farm: "38",
-      pontos: ""
+      pontos: "79"
     },
     partida_anterior: {
       kda: "0/0/12",
       anterior_farm: "20",
-      pontos: ""
+      pontos: "35"
     }
   },
   
@@ -400,12 +400,12 @@ var players = [
     partida_atual: {
       kda: "5/4/12",
       atual_farm: "186",
-      pontos: ""
+      pontos: "22"
     },
     partida_anterior: {
       kda: "2/2/4",
       anterior_farm: "247",
-      pontos: ""
+      pontos: "15"
     }
   },
   
@@ -419,12 +419,12 @@ var players = [
     partida_atual: {
       kda: "13/1/12",
       atual_farm: "198",
-      pontos: ""
+      pontos: "68"
     },
     partida_anterior: {
       kda: "3/3/5",
       anterior_farm: "189",
-      pontos: ""
+      pontos: "78"
     }
   },
   
@@ -438,12 +438,12 @@ var players = [
     partida_atual: {
       kda: "8/4/13",
       atual_farm: "271",
-      pontos: ""
+      pontos: "95"
     },
     partida_anterior: {
       kda: "2/3/5",
       anterior_farm: "311",
-      pontos: ""
+      pontos: "45"
     }
   },
   
@@ -457,12 +457,12 @@ var players = [
     partida_atual: {
       kda: "5/3/17",
       atual_farm: "218",
-      pontos: ""
+      pontos: "45"
     },
     partida_anterior: {
       kda: "4/4/2",
       anterior_farm: "279",
-      pontos: ""
+      pontos: "25"
     }
   },
   
@@ -476,12 +476,12 @@ var players = [
     partida_atual: {
       kda: "3/0/25",
       atual_farm: "7",
-      pontos: ""
+      pontos: "76"
     },
     partida_anterior: {
       kda: "1/3/5",
       anterior_farm: "23",
-      pontos: ""
+      pontos: "68"
     }
   }
 ]
