@@ -206,6 +206,46 @@ export default function Home() {
         1 - status: false | msng: Ocorreu um erro interno, tente novamente <br></br>
         </div>
 
+
+
+        <div className={styles.description}>
+        <h2 >
+          Update User Lanes
+        </h2>
+        
+          
+        URL: <code className={styles.code}>https://cartolol-apirest.vercel.app/api/update_user_lanes</code>
+          <br></br>
+        
+          <h5 >
+          Parâmetros exigidos:
+        </h5>
+        jwt:<code className={styles.code}>string</code> <br></br>
+        ptos:<code className={styles.code}>int</code> <br></br>
+        id_jogtop:<code className={styles.code}>int</code> <br></br>
+        id_jogjungle:<code className={styles.code}>int</code> <br></br>
+        id_jogmid:<code className={styles.code}>int</code> <br></br>
+        id_jogbot:<code className={styles.code}>int</code> <br></br>
+        id_jogsup:<code className={styles.code}>int</code> <br></br>
+        <h4 >
+          Possiveis retornos:
+        </h4>
+        <h5 >
+          Status Code 200:
+        </h5>
+        1 - status: true <br></br>
+        <h5 >
+          Status Code 400:
+        </h5>
+        1 - status: false | msng: Parametros invalidos ou faltando <br></br>
+        2 - status: false | msng: JWT fornecido não é um JWT valido. <br></br>
+
+        <h5 >
+          Status Code 500:
+        </h5>
+        1 - status: false | msng: Ocorreu um erro interno, tente novamente <br></br>
+        </div>
+
         
       </main>
     </div>
