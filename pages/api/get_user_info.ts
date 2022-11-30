@@ -531,6 +531,85 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse)
     var query = "SELECT * FROM users WHERE username = '" + jwtdecode.username + "'"
     var checkuser = await executeQuery(query, [])
 
+    var lane1
+    var lane2
+    var lane3
+    var lane4
+    var lane5
+    try
+    {
+      if(checkuser[0].id_jogtop != 0)
+      {
+        lane1 = players[checkuser[0].id_jogtop - 1]
+      }else
+      {
+        lane1 = {id:0}
+      }
+    }
+    catch
+    {
+      lane1 = {id:0}
+    }
+    try
+    {
+      if(checkuser[0].id_jogjungle != 0)
+      {
+        lane2 = players[checkuser[0].id_jogjungle - 1]
+      }
+      else
+      {
+        lane2 = {id:0}
+      }
+    }
+    catch
+    {
+      lane2 = {id:0}
+    }
+    try
+    {
+      if(checkuser[0].id_jogmid != 0)
+      {
+        lane3 = players[checkuser[0].id_jogmid - 1]
+      }
+      else
+      {
+        lane3 = {id:0}
+      }
+    }
+    catch
+    {
+      lane3 = {id:0}
+    }
+    try
+    {
+      if(checkuser[0].id_jogbot != 0)
+      {
+        lane4 = players[checkuser[0].id_jogbot - 1]
+      }
+      else
+      {
+        lane4 = {id:0}
+      }
+    }
+    catch
+    {
+      lane4 = {id:0}
+    }
+    try
+    {
+      if(checkuser[0].id_jogsup != 0)
+      {
+        lane5 = players[checkuser[0].id_jogsup - 1]
+      }
+      else
+      {
+        lane5 = {id:0}
+      }
+    }
+    catch
+    {
+      lane5 = {id:0}
+    }
 
     return res.status(200).json(
         { status: 'true',
@@ -539,11 +618,11 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse)
           email: checkuser[0].email,
           profile_pic: checkuser[0].profile_pic,
           ptos: checkuser[0].ptos,
-          id_jogtop: players[checkuser[0].id_jogtop + 1],
-          id_jogjungle: players[checkuser[0].id_jogjungle + 1],
-          id_jogmid: players[checkuser[0].id_jogmid + 1],
-          id_jogbot: players[checkuser[0].id_jogbot + 1],
-          id_jogsup: players[checkuser[0].id_jogsup + 1]}
+          id_jogtop: lane1,
+          id_jogjungle: lane2,
+          id_jogmid: lane3,
+          id_jogbot: lane4,
+          id_jogsup: lane5}
         )
   }
   else
