@@ -246,6 +246,29 @@ export default function Home() {
         1 - status: false | msng: Ocorreu um erro interno, tente novamente <br></br>
         </div>
 
+        <div className={styles.description}>
+        <h2 >
+          Get Ranking
+        </h2>
+        
+          
+        URL: <code className={styles.code}>https://cartolol-apirest.vercel.app/api/get_ranking</code>
+          <br></br>
+        
+        <h4 >
+          Possiveis retornos:
+        </h4>
+        <h5 >
+          Status Code 200:
+        </h5>
+        1 - status: true | ranking: [array] <br></br>
+
+        <h5 >
+          Status Code 500:
+        </h5>
+        1 - status: false | msng: Ocorreu um erro interno, tente novamente <br></br>
+        </div>
+
         
       </main>
     </div>
