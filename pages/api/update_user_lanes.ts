@@ -46,6 +46,26 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse)
 
   try
   {
+    var query = "SELECT * from mercado;"
+    var checkuser = await executeQuery(query, [])
+    if(checkuser[0].is_aberto == "1")
+    {
+      return res.status(200).json(
+        { status: 'false',
+        msng:"Mercado Fechado" }
+        )
+    }
+  }
+  catch
+  {
+    return res.status(500).json(
+      { status: 'false',
+      msng: 'Ocorreu um erro interno, tente novamente'}
+      )
+  }
+
+  try
+  {
   var jwtdecode: any
   jwtdecode = jwt_decode(jwt);
   var query = "UPDATE users SET ptos = '" + ptos + "', id_jogtop = '" + lane1 + "', id_jogjungle='" + lane2 + "', id_jogmid='" + lane3 + "', id_jogbot='" + lane4 + "', id_jogsup='" + lane5 + "', flag='"+ flag + "' WHERE username = '" + jwtdecode.username + "';"
