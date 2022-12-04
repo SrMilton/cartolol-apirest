@@ -24,7 +24,7 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse)
  var lane4 = req.body.id_jogbot
  var lane5 = req.body.id_jogsup
 
-  if(jwt <= 0 || jwt == undefined || lane1 <= 0 || lane1 == undefined || lane2 <= 0 || lane2 == undefined || lane3 <= 0 || lane3 == undefined || lane4 <= 0 || lane4 == undefined || lane5 <= 0 || lane5 == undefined || ptos <= 0 || ptos == undefined || flag <= 0 || flag == undefined)
+  if(jwt <= 0 || jwt == undefined || lane1 <= 0 || lane1 == undefined || lane2 <= 0 || lane2 == undefined || lane3 <= 0 || lane3 == undefined || lane4 <= 0 || lane4 == undefined || lane5 <= 0 || lane5 == undefined || ptos == undefined || flag <= 0 || flag == undefined)
   {
     return res.status(400).json(
       { status: 'false',
