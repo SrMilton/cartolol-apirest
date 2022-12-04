@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import NextCors from 'nextjs-cors';
+import { executeQuery } from '../../config/db'
 
 var players = [
   {
@@ -20,7 +21,7 @@ var players = [
       pontos: "74"
     }
   },
-  
+
   {
     id: 2,
     nome: "Oner",
@@ -39,7 +40,7 @@ var players = [
       pontos: "83"
     }
   },
-  
+
   {
     id: 3,
     nome: "Faker",
@@ -58,7 +59,7 @@ var players = [
       pontos: "98"
     }
   },
-  
+
   {
     id: 4,
     nome: "Gumayusi",
@@ -77,7 +78,7 @@ var players = [
       pontos: "77"
     }
   },
-  
+
   {
     id: 5,
     nome: "Keria",
@@ -96,9 +97,9 @@ var players = [
       pontos: "105"
     }
   },
-  
-  
-  
+
+
+
   {
     id: 6,
     nome: "Fudge",
@@ -117,7 +118,7 @@ var players = [
       pontos: "70"
     }
   },
-  
+
   {
     id: 7,
     nome: "Blaber",
@@ -136,7 +137,7 @@ var players = [
       pontos: "36"
     }
   },
-  
+
   {
     id: 8,
     nome: "Diplex",
@@ -155,7 +156,7 @@ var players = [
       pontos: "49"
     }
   },
-  
+
   {
     id: 9,
     nome: "Berseker",
@@ -174,7 +175,7 @@ var players = [
       pontos: "73"
     }
   },
-  
+
   {
     id: 10,
     nome: "Zven",
@@ -193,9 +194,9 @@ var players = [
       pontos: "34"
     }
   },
-  
-  
-  
+
+
+
   {
     id: 11,
     nome: "Wizer",
@@ -214,7 +215,7 @@ var players = [
       pontos: "55"
     }
   },
-  
+
   {
     id: 12,
     nome: "CarioK",
@@ -233,7 +234,7 @@ var players = [
       pontos: "44"
     }
   },
-  
+
   {
     id: 13,
     nome: "dyNquedo",
@@ -252,7 +253,7 @@ var players = [
       pontos: "74"
     }
   },
-  
+
   {
     id: 14,
     nome: "Trigo",
@@ -271,7 +272,7 @@ var players = [
       pontos: "68"
     }
   },
-  
+
   {
     id: 15,
     nome: "Damage",
@@ -290,14 +291,14 @@ var players = [
       pontos: "56"
     }
   },
-  
-  
-  
+
+
+
   {
     id: 16,
     nome: "Guigo",
-    pos: "RED Canids",
-    time: "top",
+    pos: "top",
+    time: "RED Canids",
     media_farm: "232",
     img_url: "https://i.imgur.com/mEH01PC.png",
     partida_atual: {
@@ -311,7 +312,7 @@ var players = [
       pontos: "68"
     }
   },
-  
+
   {
     id: 17,
     nome: "Aegis",
@@ -330,7 +331,7 @@ var players = [
       pontos: "92"
     }
   },
-  
+
   {
     id: 18,
     nome: "Avenger",
@@ -349,7 +350,7 @@ var players = [
       pontos: "125"
     }
   },
-  
+
   {
     id: 19,
     nome: "TitaN",
@@ -368,7 +369,7 @@ var players = [
       pontos: "85"
     }
   },
-  
+
   {
     id: 20,
     nome: "Jojo",
@@ -387,9 +388,9 @@ var players = [
       pontos: "88"
     }
   },
-  
-  
-  
+
+
+
   {
     id: 21,
     nome: "Parang",
@@ -408,7 +409,7 @@ var players = [
       pontos: "86"
     }
   },
-  
+
   {
     id: 22,
     nome: "Wiz",
@@ -427,7 +428,7 @@ var players = [
       pontos: "70"
     }
   },
-  
+
   {
     id: 23,
     nome: "Hauz",
@@ -446,7 +447,7 @@ var players = [
       pontos: "61"
     }
   },
-  
+
   {
     id: 24,
     nome: "DudsTheBoy",
@@ -465,7 +466,7 @@ var players = [
       pontos: "57"
     }
   },
-  
+
   {
     id: 25,
     nome: "Scuru",
@@ -486,14 +487,13 @@ var players = [
   }
 ]
 
-export default async function handler(req: NextApiRequest,res: NextApiResponse)
-{
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   await NextCors(req, res, {
     // Options
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
     origin: '*',
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
- });
+  });
   /*
   top 1
   jg  2
@@ -502,68 +502,87 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse)
   sup 5
   */
   var lane = req.body.lane
-  if(lane <= 0 || lane > 5 || lane == undefined)
-  {
+  if (lane <= 0 || lane > 5 || lane == undefined) {
     return res.status(400).json(
-      { status: 'false',
-      msng: 'Parametros invalidos ou faltando'}
-      )
+      {
+        status: 'false',
+        msng: 'Parametros invalidos ou faltando'
+      }
+    )
   }
   var jogadores = []
 
-  if(lane == 1)
-  {
-    for (var i = 0; i < players.length; i++)
-      {
-        if(players[i].pos == "top")
-        {
-          jogadores.push(players[i])
-        }
+  if (lane == 1) {
+    for (var i = 0; i < players.length; i++) {
+      if (players[i].pos == "top") {
+        jogadores.push(players[i])
       }
+    }
   }
-  if(lane == 2)
-  {
-    for (var i = 0; i < players.length; i++)
-      {
-        if(players[i].pos == "jg")
-        {
-          jogadores.push(players[i])
-        }
+  if (lane == 2) {
+    for (var i = 0; i < players.length; i++) {
+      if (players[i].pos == "jg") {
+        jogadores.push(players[i])
       }
+    }
   }
-  if(lane == 3)
-  {
-    for (var i = 0; i < players.length; i++)
-      {
-        if(players[i].pos == "mid")
-        {
-          jogadores.push(players[i])
-        }
+  if (lane == 3) {
+    for (var i = 0; i < players.length; i++) {
+      if (players[i].pos == "mid") {
+        jogadores.push(players[i])
       }
+    }
   }
-  if(lane == 4)
-  {
-    for (var i = 0; i < players.length; i++)
-      {
-        if(players[i].pos == "adc")
-        {
-          jogadores.push(players[i])
-        }
+  if (lane == 4) {
+    for (var i = 0; i < players.length; i++) {
+      if (players[i].pos == "adc") {
+        jogadores.push(players[i])
       }
+    }
   }
-  if(lane == 5)
-  {
-    for (var i = 0; i < players.length; i++)
-      {
-        if(players[i].pos == "sup")
-        {
-          jogadores.push(players[i])
-        }
+  if (lane == 5) {
+    for (var i = 0; i < players.length; i++) {
+      if (players[i].pos == "sup") {
+        jogadores.push(players[i])
       }
+    }
   }
-  
+
+  var ids = "";
+  for (var i = 0; i < jogadores.length; i++) {
+    ids += jogadores[i].id
+    ids += ","
+  }
+  ids = ids.slice(0, -1)
+  //Pegar infos na DB
+  var query = "SELECT * FROM players WHERE id IN (" + ids + ");"
+  var checkuser = await executeQuery(query, [])
+  for (var i = 0; i < jogadores.length; i++) {
+    jogadores[i].partida_atual.kda = checkuser[i].atual_kda
+    jogadores[i].partida_atual.atual_farm = checkuser[i].atual_farm
+    jogadores[i].partida_atual.pontos = checkuser[i].atual_ptos
+    jogadores[i].partida_anterior.kda = checkuser[i].anterior_kda
+    jogadores[i].partida_anterior.anterior_farm = checkuser[i].anterior_farm
+    jogadores[i].partida_anterior.pontos = checkuser[i].anterior_ptos
+
+    if (checkuser[i].atual_farm != 0 || checkuser[i].anterior_farm != 0) {
+      var media = ((checkuser[i].atual_farm + checkuser[i].anterior_farm) / 2)
+      if(media < 0)
+      {
+        media = media * -1
+      }
+      jogadores[i].media_farm = Math.floor(media).toString()
+
+    }
+    else {
+      jogadores[i].media_farm = '0'
+    }
+  }
+
   return res.status(200).json(
-    { status: 'true',
-      players: jogadores }
-    )
+    {
+      status: 'true',
+      players: jogadores
+    }
+  )
 }

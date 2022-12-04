@@ -300,8 +300,8 @@ var players = [
   {
     id: 16,
     nome: "Guigo",
-    pos: "RED Canids",
-    time: "top",
+    pos: "top",
+    time: "RED Canids",
     media_farm: "232",
     img_url: "https://i.imgur.com/mEH01PC.png",
     partida_atual: {
