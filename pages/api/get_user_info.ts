@@ -618,7 +618,7 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse)
           email: checkuser[0].email,
           profile_pic: checkuser[0].profile_pic,
           ptos: checkuser[0].ptos,
-          last_ptos: checkuser[0].ptos,
+          last_ptos: checkuser[0].last_ptos,
           flag: checkuser[0].flag,
           id_jogtop: lane1,
           id_jogjungle: lane2,
