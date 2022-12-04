@@ -316,8 +316,8 @@ var players = [
   {
     id: 17,
     nome: "Aegis",
-    pos: "RED Canids",
-    time: "jg",
+    pos: "jg",
+    time: "RED Canids",
     media_farm: "197",
     img_url: "https://i.imgur.com/wPqTnSU.png",
     partida_atual: {
@@ -335,8 +335,8 @@ var players = [
   {
     id: 18,
     nome: "Avenger",
-    pos: "RED Canids",
-    time: "mid",
+    pos: "mid",
+    time: "RED Canids",
     media_farm: "215",
     img_url: "https://i.imgur.com/8u2QPqW.png",
     partida_atual: {
@@ -354,8 +354,8 @@ var players = [
   {
     id: 19,
     nome: "TitaN",
-    pos: "RED Canids",
-    time: "adc",
+    pos: "adc",
+    time: "RED Canids",
     media_farm: "261",
     img_url: "https://i.imgur.com/AQM2cXg.png",
     partida_atual: {
@@ -373,8 +373,8 @@ var players = [
   {
     id: 20,
     nome: "Jojo",
-    pos: "RED Canids",
-    time: "sup",
+    pos: "sup",
+    time: "RED Canids",
     media_farm: "29",
     img_url: "https://i.imgur.com/MoWrF5p.png",
     partida_atual: {
