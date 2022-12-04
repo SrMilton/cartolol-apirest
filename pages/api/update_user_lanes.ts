@@ -68,9 +68,11 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse)
   {
   var jwtdecode: any
   jwtdecode = jwt_decode(jwt);
-  
-  var query = "UPDATE users SET ptos = '" + ptos + "', id_jogtop = '" + lane1 + "', id_jogjungle='" + lane2 + "', id_jogmid='" + lane3 + "', id_jogbot='" + lane4 + "', id_jogsup='" + lane5 + "', flag='"+ flag + "' WHERE username = '" + jwtdecode.username + "';"
+  var query =  "UPDATE users SET last_ptos = ptos WHERE username = '" + jwtdecode.username + "';"
   var lista = await executeQuery(query, [])
+
+  query =  "UPDATE users SET ptos = '" + ptos + "', id_jogtop = '" + lane1 + "', id_jogjungle='" + lane2 + "', id_jogmid='" + lane3 + "', id_jogbot='" + lane4 + "', id_jogsup='" + lane5 + "', flag='"+ flag + "' WHERE username = '" + jwtdecode.username + "';"
+  lista = await executeQuery(query, [])
   return res.status(200).json(
     { status: 'true' }
     )

@@ -49,7 +49,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         if (senha <= 0 || senha == undefined) {
             var query = "UPDATE users SET email = '" + email + "' WHERE username = '" + jwtdecode.username + "';"
             var lista = await executeQuery(query, [])
-
         }
         else {
             bcrypt.hash(senha, 10).then(async (hash) => {
