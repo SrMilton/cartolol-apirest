@@ -494,63 +494,64 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
     });
 
-    //Passar tudo atual pro velho
-    var query = "UPDATE players SET anterior_kda = atual_kda, anterior_farm = atual_farm, anterior_ptos = atual_ptos;"
-    var checkuser = await executeQuery(query, [])
-
-    for (var i = 0; i < players.length; i++) {
-        var farm = 0
-        var kills = 0
-        var deaths = 0
-        var assists = 0
-
-        if (players[i].pos == "top") {
-            farm = Math.floor(Math.random() * 295) + 220
-            kills = Math.floor(Math.random() * 7) + 2
-            deaths = Math.floor(Math.random() * 5) + 1
-            assists = Math.floor(Math.random() * 6) + 2
-        }
-        if (players[i].pos == "jg") {
-            farm = Math.floor(Math.random() * 180) + 140
-            kills = Math.floor(Math.random() * 4) + 0
-            deaths = Math.floor(Math.random() * 4) + 1
-            assists = Math.floor(Math.random() * 8) + 2
-        }
-        if (players[i].pos == "mid") {
-            farm = Math.floor(Math.random() * 310) + 250
-            kills = Math.floor(Math.random() * 6) + 3
-            deaths = Math.floor(Math.random() * 4) + 1
-            assists = Math.floor(Math.random() * 8) + 2
-        }
-        if (players[i].pos == "adc") {
-            farm = Math.floor(Math.random() * 300) + 220
-            kills = Math.floor(Math.random() * 5) + 2
-            deaths = Math.floor(Math.random() * 4) + 1
-            assists = Math.floor(Math.random() * 8) + 3
-        }
-        if (players[i].pos == "sup") {
-            farm = Math.floor(Math.random() * 28) + 17
-            kills = Math.floor(Math.random() * 2) + 0
-            deaths = Math.floor(Math.random() * 3) + 1
-            assists = Math.floor(Math.random() * 16) + 4
-        }
-
-        players[i].partida_atual.pontos = ((kills * 10) + (assists * 5) + ((Math.floor(farm * 0.2)) / deaths)).toString()
-        players[i].partida_atual.atual_farm = farm.toString();
-        players[i].partida_atual.kda = kills + "/" + deaths + "/" + assists
-        var userid = i + 1
-        query = "UPDATE players SET atual_kda = '" + players[i].partida_atual.kda + "', atual_farm='" + players[i].partida_atual.atual_farm + "', atual_ptos='" + players[i].partida_atual.pontos + "' WHERE id = '" + userid + "';"
-        checkuser = executeQuery(query, [])
-    }
-
-    //Atualizar a pontuação individual dos usuarios
-    var query = "UPDATE users SET last_ptos = ptos;"
-    var checkuser = await executeQuery(query, [])
-
-    var query = "SELECT id, id_jogtop, id_jogjungle, id_jogmid, id_jogbot, id_jogsup FROM users WHERE flag = '1'"
-    var checkuser = await executeQuery(query, [])
-
     try {
+        //Passar tudo atual pro velho
+        var query = "UPDATE players SET anterior_kda = atual_kda, anterior_farm = atual_farm, anterior_ptos = atual_ptos;"
+        var checkuser = await executeQuery(query, [])
+
+        for (var i = 0; i < players.length; i++) {
+            var farm = 0
+            var kills = 0
+            var deaths = 0
+            var assists = 0
+
+            if (players[i].pos == "top") {
+                farm = Math.floor(Math.random() * 295) + 220
+                kills = Math.floor(Math.random() * 7) + 2
+                deaths = Math.floor(Math.random() * 5) + 1
+                assists = Math.floor(Math.random() * 6) + 2
+            }
+            if (players[i].pos == "jg") {
+                farm = Math.floor(Math.random() * 180) + 140
+                kills = Math.floor(Math.random() * 4) + 0
+                deaths = Math.floor(Math.random() * 4) + 1
+                assists = Math.floor(Math.random() * 8) + 2
+            }
+            if (players[i].pos == "mid") {
+                farm = Math.floor(Math.random() * 310) + 250
+                kills = Math.floor(Math.random() * 6) + 3
+                deaths = Math.floor(Math.random() * 4) + 1
+                assists = Math.floor(Math.random() * 8) + 2
+            }
+            if (players[i].pos == "adc") {
+                farm = Math.floor(Math.random() * 300) + 220
+                kills = Math.floor(Math.random() * 5) + 2
+                deaths = Math.floor(Math.random() * 4) + 1
+                assists = Math.floor(Math.random() * 8) + 3
+            }
+            if (players[i].pos == "sup") {
+                farm = Math.floor(Math.random() * 28) + 17
+                kills = Math.floor(Math.random() * 2) + 0
+                deaths = Math.floor(Math.random() * 3) + 1
+                assists = Math.floor(Math.random() * 16) + 4
+            }
+
+            players[i].partida_atual.pontos = ((kills * 10) + (assists * 5) + ((Math.floor(farm * 0.2)) / deaths)).toString()
+            players[i].partida_atual.atual_farm = farm.toString();
+            players[i].partida_atual.kda = kills + "/" + deaths + "/" + assists
+            var userid = i + 1
+            query = "UPDATE players SET atual_kda = '" + players[i].partida_atual.kda + "', atual_farm='" + players[i].partida_atual.atual_farm + "', atual_ptos='" + players[i].partida_atual.pontos + "' WHERE id = '" + userid + "';"
+            checkuser = executeQuery(query, [])
+        }
+
+        //Atualizar a pontuação individual dos usuarios
+        var query = "UPDATE users SET last_ptos = ptos;"
+        var checkuser = await executeQuery(query, [])
+
+        var query = "SELECT id, id_jogtop, id_jogjungle, id_jogmid, id_jogbot, id_jogsup FROM users WHERE flag = '1'"
+        var checkuser = await executeQuery(query, [])
+
+
         for (var i = 0; i < checkuser.length; i++) {
             var ptos_user = parseInt(players[checkuser[i].id_jogtop - 1].partida_atual.pontos) + parseInt(players[checkuser[i].id_jogjungle - 1].partida_atual.pontos) + parseInt(players[checkuser[i].id_jogmid - 1].partida_atual.pontos) + parseInt(players[checkuser[i].id_jogsup - 1].partida_atual.pontos) + parseInt(players[checkuser[i].id_jogbot - 1].partida_atual.pontos)
             var user_id = checkuser[i].id
@@ -562,9 +563,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             executeQuery(query, [])
         }
     }
-    catch (e)
-    {
-        console.log(e)
+    catch (e) {
+        return res.status(200).json(
+            { status: 'false' }
+        )
     }
 
 
