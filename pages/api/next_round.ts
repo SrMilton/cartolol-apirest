@@ -539,7 +539,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         players[i].partida_atual.atual_farm = farm.toString();
         players[i].partida_atual.kda = kills + "/" + deaths + "/" + assists
         var userid = i + 1
-        query = "UPDATE players SET atual_kda = '"+ players[i].partida_atual.kda + "', atual_farm='" + players[i].partida_atual.atual_farm + "', atual_ptos='" + players[i].partida_atual.pontos + "' WHERE id = '" + userid + "';"
+        query = "UPDATE players SET atual_kda = '" + players[i].partida_atual.kda + "', atual_farm='" + players[i].partida_atual.atual_farm + "', atual_ptos='" + players[i].partida_atual.pontos + "' WHERE id = '" + userid + "';"
         checkuser = await executeQuery(query, [])
     }
 
@@ -550,20 +550,28 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     var query = "SELECT id, id_jogtop, id_jogjungle, id_jogmid, id_jogbot, id_jogsup FROM users WHERE flag = '1'"
     var checkuser = await executeQuery(query, [])
 
-    for(var i = 0; i < checkuser.length; i++)
-    {
-        var ptos_user = parseInt(players[checkuser[i].id_jogtop - 1].partida_atual.pontos) + parseInt(players[checkuser[i].id_jogjungle - 1].partida_atual.pontos) + parseInt(players[checkuser[i].id_jogmid - 1].partida_atual.pontos) + parseInt(players[checkuser[i].id_jogsup - 1].partida_atual.pontos) + parseInt(players[checkuser[i].id_jogbot - 1].partida_atual.pontos)
-        var user_id = checkuser[i].id
+    console.log(checkuser)
 
-        query = "UPDATE users SET ptos_totais = ptos_totais + '" + ptos_user + "' WHERE id = '" + user_id + "';"
-        checkuser = await executeQuery(query, [])
-        
-        query = "UPDATE users SET ptos = '" + ptos_user + "' WHERE id = '" + user_id + "';"
-        checkuser = await executeQuery(query, [])
+    try {
+        for (var i = 0; i < checkuser.length; i++) {
+            var ptos_user = parseInt(players[checkuser[i].id_jogtop - 1].partida_atual.pontos) + parseInt(players[checkuser[i].id_jogjungle - 1].partida_atual.pontos) + parseInt(players[checkuser[i].id_jogmid - 1].partida_atual.pontos) + parseInt(players[checkuser[i].id_jogsup - 1].partida_atual.pontos) + parseInt(players[checkuser[i].id_jogbot - 1].partida_atual.pontos)
+            var user_id = checkuser[i].id
+
+            var query = "UPDATE users SET ptos_totais = ptos_totais + '" + ptos_user + "' WHERE id = '" + user_id + "';"
+            executeQuery(query, [])
+
+            var query = "UPDATE users SET ptos = '" + ptos_user + "' WHERE id = '" + user_id + "';"
+            executeQuery(query, [])
+        }
+    }
+    catch (e)
+    {
+        console.log(e)
     }
 
+
     return res.status(200).json(
-        { status: 'true'}
-        )
+        { status: 'true' }
+    )
 
 }
