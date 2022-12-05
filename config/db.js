@@ -1,10 +1,10 @@
 const {createPool} = require("mysql");
 const pool = createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    port: process.env.DB_PORT,
-    database: process.env.DB_DATA
+    host: 'db4free.net',
+    user: 'cartolol',
+    password: 'comesebebes',
+    port: 3306,
+    database: 'cartolol'
 })
 
 pool.getConnection((err)=>{

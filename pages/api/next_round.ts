@@ -540,7 +540,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         players[i].partida_atual.kda = kills + "/" + deaths + "/" + assists
         var userid = i + 1
         query = "UPDATE players SET atual_kda = '" + players[i].partida_atual.kda + "', atual_farm='" + players[i].partida_atual.atual_farm + "', atual_ptos='" + players[i].partida_atual.pontos + "' WHERE id = '" + userid + "';"
-        checkuser = await executeQuery(query, [])
+        checkuser = executeQuery(query, [])
     }
 
     //Atualizar a pontuação individual dos usuarios
@@ -549,8 +549,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     var query = "SELECT id, id_jogtop, id_jogjungle, id_jogmid, id_jogbot, id_jogsup FROM users WHERE flag = '1'"
     var checkuser = await executeQuery(query, [])
-
-    console.log(checkuser)
 
     try {
         for (var i = 0; i < checkuser.length; i++) {
