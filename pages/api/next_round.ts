@@ -556,10 +556,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             var ptos_user = parseInt(players[checkuser[i].id_jogtop - 1].partida_atual.pontos) + parseInt(players[checkuser[i].id_jogjungle - 1].partida_atual.pontos) + parseInt(players[checkuser[i].id_jogmid - 1].partida_atual.pontos) + parseInt(players[checkuser[i].id_jogsup - 1].partida_atual.pontos) + parseInt(players[checkuser[i].id_jogbot - 1].partida_atual.pontos)
             var user_id = checkuser[i].id
 
-            var query = "UPDATE users SET ptos_totais = ptos_totais + '" + ptos_user + "' WHERE id = '" + user_id + "';"
-            executeQuery(query, [])
+            //var query = "UPDATE users SET ptos_totais = ptos_totais + '" + ptos_user + "' WHERE id = '" + user_id + "';"
+            //executeQuery(query, [])
 
-            var query = "UPDATE users SET ptos = '" + ptos_user + "' WHERE id = '" + user_id + "';"
+            var query = "UPDATE users SET ptos = '" + ptos_user + "',  ptos_totais = ptos_totais + '" + ptos_user +"' WHERE id = '" + user_id + "';"
             executeQuery(query, [])
         }
     }
