@@ -568,8 +568,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             //var query = "UPDATE users SET ptos_totais = ptos_totais + '" + ptos_user + "' WHERE id = '" + user_id + "';"
             //executeQuery(query, [])
 
-            var query = "UPDATE users SET ptos = '" + ptos_user + "' WHERE id = '" + user_id + "';"
-            executeQuery(query, [])
+            if(i != checkuser.length)
+            {
+                var query = "UPDATE users SET ptos = '" + ptos_user + "' WHERE id = '" + user_id + "';"
+                executeQuery(query, [])
+            }
+            else
+            {
+                var query = "UPDATE users SET ptos = '" + ptos_user + "' WHERE id = '" + user_id + "';"
+                await executeQuery(query, [])
+            }
         }
 
         

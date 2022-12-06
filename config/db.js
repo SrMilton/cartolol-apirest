@@ -1,18 +1,23 @@
 const {createPool} = require("mysql");
-const pool = createPool({
-    host: 'db4free.net',
-    user: 'cartolol',
-    password: 'comesebebes',
-    port: 3306,
-    database: 'cartolol'
-})
+let pool = null;
 
-pool.getConnection((err)=>{
-    if(err){
-        console.log('Erro ao conectar na DB')
-    }
-    console.log('Conectado na DB')
-});
+if(pool == null)
+{
+    pool = createPool({
+        host: 'db4free.net',
+        user: 'cartolol',
+        password: 'comesebebes',
+        port: 3306,
+        database: 'cartolol'
+    })
+
+    pool.getConnection((err)=>{
+        if(err){
+            console.log('Erro ao conectar na DB')
+        }
+        console.log('Conectado na DB')
+    });
+}
 
 const executeQuery = (query, arraParms) => {
     return new Promise((resolve, reject) =>{
