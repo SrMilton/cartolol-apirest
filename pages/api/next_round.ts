@@ -559,9 +559,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             //var query = "UPDATE users SET ptos_totais = ptos_totais + '" + ptos_user + "' WHERE id = '" + user_id + "';"
             //executeQuery(query, [])
 
-            var query = "UPDATE users SET ptos = '" + ptos_user + "',  ptos_totais = ptos_totais + '" + ptos_user +"' WHERE id = '" + user_id + "';"
+            var query = "UPDATE users SET ptos = '" + ptos_user + "' WHERE id = '" + user_id + "';"
             executeQuery(query, [])
         }
+
+        
+        var query = "UPDATE users SET ptos_totais = ptos_totais + ptos WHERE flag = '1'"
+        await executeQuery(query, [])
     }
     catch (e) {
         return res.status(200).json(
