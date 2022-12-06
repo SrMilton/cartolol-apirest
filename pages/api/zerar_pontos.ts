@@ -11,6 +11,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
     });
 
+    if(req.body.pass != process.env.DEV_SENHA)
+    {
+        return res.status(200).json(
+            {
+                status: 'false'
+            }
+        )
+    }
+
     //Passar tudo atual pro velho
     var query = "UPDATE players SET anterior_kda = '0/0/0', anterior_farm = '0', anterior_ptos = '0', atual_kda = '0/0/0', atual_farm = '0', atual_ptos = '0';"
     var checkuser = await executeQuery(query, [])
