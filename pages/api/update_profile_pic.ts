@@ -19,7 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     var pic_id = req.body.pic_id
 
 
-    if (jwt <= 0 || jwt == undefined || pic_id <= 0 || pic_id == undefined) {
+    if (jwt <= 0 || jwt == undefined || pic_id < 0 || pic_id == undefined) {
         return res.status(400).json(
             {
                 status: 'false',
